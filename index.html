@@ -1,128 +1,469 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Política de Privacidad — EatFit.ai</title>
-  <meta name="description" content="Política de privacidad de la aplicación EatFit.ai.">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Política de Privacidad - Mirror Alarm</title>
+
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #60a5fa;
-      --border: #1f2937;
+      color-scheme: light dark;
+      --bg-color: #0f172a;
+      --card-bg: #020617;
+      --text-color: #e5e7eb;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
     }
-    html, body {
-      background: radial-gradient(1200px 600px at 10% -10%, #111827 0%, #0b1220 60%, #05080f 100%);
-      color: var(--text);
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+      color: var(--text-color);
+      padding: 32px 16px;
       line-height: 1.6;
+      display: flex;
+      justify-content: center;
     }
-    .container {
-      max-width: 920px;
-      margin: 40px auto;
-      padding: 0 20px 60px;
+
+    .page {
+      width: 100%;
+      max-width: 900px;
     }
+
     .card {
-      background: rgba(17, 24, 39, 0.7);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      backdrop-filter: blur(6px);
-      padding: 28px;
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.96),
+        rgba(15, 23, 42, 0.98)
+      );
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.85);
+      padding: 28px 22px;
+      backdrop-filter: blur(20px);
     }
+
+    @media (min-width: 768px) {
+      body {
+        padding: 48px 24px;
+      }
+      .card {
+        padding: 40px 36px;
+      }
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
     h1 {
-      font-size: 2rem;
-      margin: 0 0 6px;
-      letter-spacing: .2px;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      background: linear-gradient(120deg, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
     }
-    .subtitle {
-      color: var(--muted);
+
+    .app-name {
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: #9ca3af;
       margin-bottom: 24px;
     }
+
     h2 {
-      margin-top: 28px;
-      font-size: 1.25rem;
-      color: var(--accent);
+      font-size: 1.2rem;
+      margin-top: 22px;
+      margin-bottom: 8px;
+      color: #e5e7eb;
     }
-    p, li {
-      color: var(--text);
+
+    h3 {
+      font-size: 1rem;
+      margin-top: 16px;
+      margin-bottom: 4px;
+      color: #e5e7eb;
     }
-    code, .pill {
-      background: #0b1220;
-      border: 1px solid var(--border);
-      padding: 2px 8px;
+
+    p {
+      margin-bottom: 10px;
+      font-size: 0.96rem;
+      color: #d1d5db;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      font-size: 0.96rem;
+      color: #d1d5db;
+    }
+
+    .section {
+      border-left: 2px solid rgba(148, 163, 184, 0.35);
+      padding-left: 12px;
+      margin-top: 18px;
+      padding-top: 2px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      padding: 4px 10px;
       border-radius: 999px;
-      color: var(--muted);
-      font-size: .9rem;
+      background: var(--accent-soft);
+      color: #e0f2fe;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      margin-bottom: 16px;
     }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.9);
+    }
+
+    .summary-box {
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at top left, #0b1120, #020617);
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+
+    .summary-box strong {
+      color: #e5e7eb;
+    }
+
     a {
-      color: #93c5fd;
+      color: #38bdf8;
       text-decoration: none;
-      border-bottom: 1px dashed rgba(147,197,253,.5);
     }
-    a:hover { border-bottom-style: solid; }
-    ul { padding-left: 1.1rem; }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
-      margin-top: 28px;
-      font-size: .9rem;
-      color: var(--muted);
-      text-align: center;
-    }
-    .notice {
-      margin-top: 14px;
-      font-size: .95rem;
-      color: var(--muted);
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: right;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="page">
     <div class="card">
-      <h1>Política de Privacidad — EatFit.ai</h1>
-      <div class="subtitle">Última actualización: 7 de octubre de 2025</div>
+      <div class="app-name">MIRROR ALARM</div>
+      <h1>Política de Privacidad</h1>
+      <div class="meta">Última actualización: 06/12/2025</div>
 
-      <p>Gracias por usar <strong>EatFit.ai</strong>, una aplicación desarrollada por un <em>desarrollador independiente</em>. Esta política de privacidad explica cómo se recopila, utiliza y protege la información de los usuarios que utilizan la aplicación.</p>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Procesamiento 100% en tu dispositivo · Sin subir fotos a servidores
+      </div>
 
-      <h2>1. Información general</h2>
-      <p>EatFit.ai permite <strong>contar calorías a partir de imágenes de comida</strong>. La app no requiere registro ni recopila información personal identificable (por ejemplo: nombre, dirección o correo electrónico).</p>
+      <div class="summary-box">
+        <p>
+          <strong>Resumen rápido:</strong> Esta aplicación usa la cámara solo
+          para verificar que estás despierto mediante una foto. Las imágenes se
+          procesan exclusivamente en tu dispositivo, no se almacenan
+          permanentemente, no se envían a servidores y no se realiza
+          reconocimiento facial, únicamente detección de presencia de una cara.
+        </p>
+      </div>
 
-      <h2>2. Información que recopila la aplicación</h2>
-      <p>EatFit.ai no recopila, almacena ni comparte información personal. No obstante, utiliza servicios de terceros que pueden procesar datos técnicos necesarios para su funcionamiento.</p>
-      <ul>
-        <li><strong>Uso de la cámara y almacenamiento</strong>. Se solicita acceso a la cámara y/o galería únicamente para <em>analizar imágenes de comidas</em> y estimar su contenido calórico. Las imágenes se procesan de forma temporal y no se guardan en servidores del desarrollador. Cuando aplica, el análisis puede realizarse mediante una API de inteligencia artificial de terceros.</li>
-        <li><strong>Publicidad (AdMob)</strong>. La app puede mostrar <em>anuncios recompensados</em> gestionados por Google AdMob. AdMob puede recopilar identificadores publicitarios (como el <span class="pill">ID de publicidad de Android</span>) para ofrecer anuncios personalizados o no personalizados, según la configuración del dispositivo. Consulta la política de Google: <a href="https://policies.google.com/privacy" rel="noopener noreferrer">policies.google.com/privacy</a>.</li>
-      </ul>
+      <div class="section">
+        <h2>1. Responsable del Tratamiento</h2>
+        <p>
+          El responsable del tratamiento de los datos personales es:
+        </p>
+        <ul>
+          <li>
+            <strong>Nombre del Titular:</strong> Daniel Montoliu Llopis
+          </li>
+          <li>
+            <strong>Aplicación:</strong> Mirror Alarm
+          </li>
+          <li>
+            <strong>Ubicación:</strong> Valencia, España
+          </li>
+          <li>
+            <strong>Correo de contacto:</strong>
+            <a href="mailto:llodamont@gmail.com">llodamont@gmail.com</a>
+          </li>
+        </ul>
+        <p>
+          Puedes contactar con el responsable para cualquier duda relacionada
+          con esta Política de Privacidad o el tratamiento de la información.
+        </p>
+      </div>
 
-      <h2>3. Uso de la información</h2>
-      <p>Los datos tratados (por ejemplo, imágenes temporales) se utilizan exclusivamente para:</p>
-      <ul>
-        <li>Analizar los alimentos y calcular valores nutricionales aproximados.</li>
-        <li>Mostrar resultados en la interfaz de usuario.</li>
-        <li>Permitir el acceso a funciones gratuitas mediante anuncios recompensados.</li>
-      </ul>
+      <div class="section">
+        <h2>2. Datos que Recopilamos</h2>
+        <p>
+          La aplicación <strong>no recopila datos personales identificables</strong> que se
+          envíen a servidores externos. Todo el tratamiento se realiza de forma
+          local en el dispositivo del usuario.
+        </p>
 
-      <h2>4. Almacenamiento y seguridad</h2>
-      <p>EatFit.ai no almacena información personal ni imágenes en servidores propios. Los datos se procesan únicamente durante el uso de la app y se eliminan inmediatamente después. Se aplican medidas razonables de seguridad para proteger el procesamiento temporal de la información.</p>
+        <h3>2.1 Cámara</h3>
+        <p>
+          La aplicación solicita acceso a la cámara con la única finalidad de:
+        </p>
+        <ul>
+          <li>
+            Permitir al usuario tomar una fotografía para poder apagar la
+            alarma.
+          </li>
+        </ul>
+        <p>
+          Las fotografías tomadas:
+        </p>
+        <ul>
+          <li>
+            Se procesan únicamente en el dispositivo del usuario
+            (<strong>on-device</strong>).
+          </li>
+          <li>
+            <strong>No se envían a ningún servidor externo.</strong>
+          </li>
+          <li>
+            <strong>No se almacenan de forma permanente</strong> por la
+            aplicación.
+          </li>
+          <li>
+            No se usan para reconocimiento facial, únicamente para detectar la
+            presencia de una cara.
+          </li>
+        </ul>
 
-      <h2>5. Enlaces y servicios de terceros</h2>
-      <p>La app puede contener enlaces o integraciones con servicios externos (por ejemplo, APIs de reconocimiento de imágenes o AdMob). Estos servicios operan bajo sus propias políticas de privacidad y condiciones.</p>
+        <h3>2.2 Notificaciones</h3>
+        <p>
+          La aplicación utiliza notificaciones locales para:
+        </p>
+        <ul>
+          <li>Activar y mostrar alarmas en la hora configurada.</li>
+          <li>
+            Informar al usuario de que una alarma está sonando y debe ser
+            atendida.
+          </li>
+        </ul>
 
-      <h2>6. Privacidad infantil</h2>
-      <p>EatFit.ai no está dirigida a menores de 13 años. Si se detecta el uso por parte de un menor sin consentimiento de un tutor legal, se recomienda desinstalar la aplicación.</p>
+        <h3>2.3 Almacenamiento Local (en el dispositivo)</h3>
+        <p>
+          La aplicación almacena en el propio dispositivo únicamente:
+        </p>
+        <ul>
+          <li>Configuración de alarmas (hora, días, estado activado/desactivado).</li>
+          <li>Preferencias de la aplicación (por ejemplo, volumen o tono).</li>
+        </ul>
+        <p>
+          Estos datos se almacenan únicamente para el correcto funcionamiento de
+          la aplicación y <strong>no se envían a servidores externos</strong>.
+        </p>
+      </div>
 
-      <h2>7. Cambios en esta política</h2>
-      <p>Podemos actualizar esta política periódicamente. La fecha de <em>Última actualización</em> reflejará los cambios. Se recomienda revisarla con regularidad.</p>
+      <div class="section">
+        <h2>3. Tratamiento de Imágenes (Detección de Persona)</h2>
+        <p>
+          Para apagar la alarma, la aplicación puede requerir que el usuario
+          tome una fotografía desde la propia app.
+        </p>
+        <p>En relación con esta funcionalidad:</p>
+        <ul>
+          <li>
+            La fotografía se procesa exclusivamente en el dispositivo para
+            detectar la presencia de una cara.
+          </li>
+          <li>
+            <strong>La imagen nunca se envía a servidores ni a terceras
+            partes.</strong>
+          </li>
+          <li>
+            No se realiza reconocimiento facial (no se identifica quién es la
+            persona), solo se detecta si hay una cara en la imagen.
+          </li>
+          <li>
+            Tras el procesamiento, la imagen puede ser eliminada de forma
+            automática o permanecer como archivo temporal del sistema, sin que
+            la aplicación realice un almacenamiento permanente ni un uso
+            adicional.
+          </li>
+        </ul>
+      </div>
 
-      <h2>8. Contacto</h2>
-      <p>Para consultas sobre esta política o la aplicación, escribe a: <a href="mailto:llodamont@gmail.com">llodamont@gmail.com</a></p>
+      <div class="section">
+        <h2>4. Qué NO hacemos con tus datos</h2>
+        <p>La aplicación <strong>NO</strong> realiza ninguna de las siguientes acciones:</p>
+        <ul>
+          <li>No comparte datos con terceros.</li>
+          <li>No vende datos a anunciantes u otras empresas.</li>
+          <li>No utiliza las fotografías para entrenar modelos externos.</li>
+          <li>No ejecuta reconocimiento facial para identificar personas.</li>
+          <li>No utiliza servidores externos para guardar tus fotos.</li>
+          <li>No realiza publicidad personalizada basada en tus datos.</li>
+        </ul>
+      </div>
 
+      <div class="section">
+        <h2>5. Seguridad de la Información</h2>
+        <p>
+          Se adoptan medidas razonables para garantizar que la información que
+          se procesa (principalmente la configuración de alarmas y las imágenes
+          temporales) se maneja de forma segura y solo en el dispositivo.
+        </p>
+        <p>
+          El acceso a la cámara únicamente se realiza cuando el usuario concede
+          los permisos correspondientes y en el momento en que es necesario para
+          el uso de la funcionalidad principal (apagar la alarma con foto).
+        </p>
+      </div>
 
-      <footer>© 2025 EatFit.ai · Política de Privacidad</footer>
+      <div class="section">
+        <h2>6. Bases Legales del Tratamiento</h2>
+        <p>
+          El tratamiento de los datos estrictamente necesarios para el
+          funcionamiento de la aplicación se fundamenta en:
+        </p>
+        <ul>
+          <li>
+            <strong>Consentimiento del usuario:</strong> al otorgar permisos de
+            cámara y notificaciones.
+          </li>
+          <li>
+            <strong>Interés legítimo:</strong> garantizar el funcionamiento
+            correcto de la alarma y de las funcionalidades asociadas a ella.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>7. Terceros y Bibliotecas Utilizadas</h2>
+        <p>
+          La aplicación puede hacer uso de bibliotecas de terceros para:
+        </p>
+        <ul>
+          <li>Manejo de la cámara.</li>
+          <li>Gestión de notificaciones y alarmas locales.</li>
+          <li>Detección de rostro en el propio dispositivo (on-device).</li>
+        </ul>
+        <p>
+          Estas bibliotecas pueden ser, por ejemplo, servicios como Google ML
+          Kit para detección de rostro en el dispositivo. En cualquier caso:
+        </p>
+        <ul>
+          <li>El procesamiento se realiza localmente en el dispositivo.</li>
+          <li>
+            No se envían las imágenes a servidores externos desde la
+            aplicación.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>8. Uso por Menores de Edad</h2>
+        <p>
+          La aplicación está destinada a usuarios mayores de <strong>13 años</strong>.
+          No se recopila de forma intencionada información de menores de edad.
+        </p>
+        <p>
+          Si un padre, madre o tutor legal considera que un menor ha proporcionado datos,
+          puede contactar con el responsable para solicitar información o la
+          eliminación de dichos datos almacenados localmente (en la medida en que
+          sea posible).
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>9. Derechos del Usuario</h2>
+        <p>
+          Aunque la aplicación no almacena datos personales en servidores del
+          responsable, el usuario tiene derecho a:
+        </p>
+        <ul>
+          <li>Obtener información clara sobre cómo se tratan sus datos.</li>
+          <li>
+            Solicitar la eliminación de la configuración almacenada localmente
+            (por ejemplo, eliminando la aplicación o borrando los datos desde
+            los ajustes del dispositivo).
+          </li>
+        </ul>
+        <p>
+          Para cualquier consulta o solicitud relacionada con sus derechos, el
+          usuario puede contactar al correo:
+          <a href="mailto:llodamont@gmail.com">llodamont@gmail.com</a>.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>10. Cambios en esta Política de Privacidad</h2>
+        <p>
+          Esta Política de Privacidad puede ser actualizada para reflejar
+          cambios en la aplicación o en la normativa aplicable.
+        </p>
+        <p>
+          En caso de cambios relevantes, se informará al usuario mediante una
+          actualización de la aplicación y/o un aviso dentro de la propia app.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>11. Contacto</h2>
+        <p>
+          Para cualquier duda, comentario o solicitud relacionada con esta
+          Política de Privacidad, puedes contactar con el responsable en:
+        </p>
+        <ul>
+          <li>
+            <strong>Correo electrónico:</strong>
+            <a href="mailto:llodamont@gmail.com">llodamont@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+
+      <footer>
+        © <span id="year"></span> Daniel Montoliu Llopis · Todos los derechos reservados.
+      </footer>
     </div>
   </div>
+
+  <script>
+    // Ajustar año automáticamente
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+  </script>
 </body>
 </html>
